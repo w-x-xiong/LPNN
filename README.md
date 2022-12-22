@@ -10,11 +10,17 @@ How to call the method? If the MATLAB ode15s solver is to be used, then do the f
 x_lpnnlca = [Outputs_lca(end,1); Outputs_lca(end,2)];
 
 Here, in the first line there are 8 additional parameters to be specified by the user, i.e., anc, ri1, rho, thrs1, thrs2, thrs3，tspan, and neuron_ini.
+
 anc is a $2 \times L$ matrix, holding the position coordinates for $L$ sensors.
+
 ri1 is a vector of length $(L-1)$, holding the non-redundant TDOA-based range difference measurements.
+
 rho is a positive constant, known as the augmented Lagrangian parameter and can be simply set to 5.
-thrs1, thrs2, thrs3 correspond to kappa, tau, delta in the paper, respectively, which can be set to 1, 1, 1.
+
+thrs1, thrs2, thrs3 correspond to $\kappa$, $\tau$, $\delta$ in the paper, respectively, which can be set to 1, 1, 1.
+
 tspan = [0:1:somevalue];, where somevalue is the maximum number of time constants set by the user (e.g. 50).
+
 neuron_ini1 is a $(6L) \times 1$ vector, representing the initial values held in the neurons. It can be simply set to rand(6*L, 1).
 
 x_lpnnlca gives the location estimate.
